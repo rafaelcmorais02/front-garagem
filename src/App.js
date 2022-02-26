@@ -1,9 +1,10 @@
 import './App.css';
+import Login from './components/login/Login';
 
 function App() {
   return (
-    <div>
-      <h1>Olá mundo</h1>
+    <div className='container-sm'>
+      <Login />
     </div>
   );
 }
