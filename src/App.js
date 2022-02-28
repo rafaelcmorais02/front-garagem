@@ -1,10 +1,10 @@
-import './App.css';
-import Login from './components/login/Login';
+import Routes from './Routes'
 
 function App() {
+
   return (
     <div className='container-sm'>
-      <Login />
+      <Routes />
     </div>
   );
 }
