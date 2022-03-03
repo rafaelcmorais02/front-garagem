@@ -14,13 +14,15 @@ h1 {
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin: 20px;
 }
 
 .customRow {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .customCard {
@@ -30,4 +32,26 @@ h1 {
 
 h1 {
   font-size: 25px;
+}
+
+h2 {
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.customForm {
+  width: 100%;
+}
+
+.customCreateGarage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.CustomAddButton {
+  margin-bottom: 20px;
 }
