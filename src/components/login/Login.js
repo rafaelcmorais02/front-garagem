@@ -41,7 +41,7 @@ const Login = () => {
                         password: password
                     }
                     localStorage.setItem("authentication", JSON.stringify(authentication));
-                    navigate('/garages', { state: { data: data.data } })
+                    navigate('/garages', { state: { data: data.data } }) // Navega para /garages e envia dados de usuário
                 })
                 .catch((error) => {
                     console.log(error.request.response)
@@ -87,6 +87,9 @@ const Login = () => {
                     document.getElementById('lastName').value = ''
                     document.getElementById('password2').value = ''
                     document.getElementById('passwordValidator').value = ''
+                    document.getElementById('email').value = user_name
+                    document.getElementById('password').value = password
+
                 })
                 .catch((error) => {
                     console.log(error.request.response)

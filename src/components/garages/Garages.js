@@ -13,6 +13,7 @@ const Garages = () => {
     const state = useLocation()
     const email = state.state.data.email
     const userId = state.state.data.user_id
+    const token = state.state.data.token
 
     useEffect(() => {
         const frontAPIData = {}
@@ -20,7 +21,9 @@ const Garages = () => {
             const config = {
                 method: 'get',
                 url: `http://127.0.0.1:8000/api/v1/garages?user=${userId}`,
-                headers: {}
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
             };
             const garageAPI = await axios(config)
             frontAPIData.garages = garageAPI.data.data
@@ -29,7 +32,9 @@ const Garages = () => {
                 const config = {
                     method: 'get',
                     url: `http://127.0.0.1:8000/api/v1/garages/vehicles?garage=${garageData.id}`,
-                    headers: {}
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 };
 
                 const vehicleAPI = await axios(config)
@@ -48,7 +53,9 @@ const Garages = () => {
         const config = {
             method: 'delete',
             url: `http://127.0.0.1:8000/api/v1/garages/delete/${garageId}`,
-            headers: {}
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
         };
 
         axios(config)
@@ -74,7 +81,8 @@ const Garages = () => {
                 method: 'post',
                 url: 'http://127.0.0.1:8000/api/v1/garages/register',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
                 },
                 data: data
             };
@@ -111,7 +119,8 @@ const Garages = () => {
                 method: 'post',
                 url: 'http://127.0.0.1:8000/api/v1/garages/vehicle/register',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
                 },
                 data: data
             };
