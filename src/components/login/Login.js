@@ -24,7 +24,7 @@ const Login = () => {
             });
             const config = {
                 method: 'post',
-                url: 'http://localhost:8000/api/v1/users/api-token-auth/',
+                url: 'https://garage-api-app.herokuapp.com/api/v1/users/api-token-auth/',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -72,7 +72,7 @@ const Login = () => {
             })
             const config = {
                 method: 'post',
-                url: 'http://127.0.0.1:8000/api/v1/users/register',
+                url: 'https://garage-api-app.herokuapp.com/api/v1/users/register',
                 headers: {
                     'Content-Type': 'application/json'
                 },

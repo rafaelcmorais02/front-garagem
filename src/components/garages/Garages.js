@@ -20,7 +20,7 @@ const Garages = () => {
         async function getData() {
             const config = {
                 method: 'get',
-                url: `http://127.0.0.1:8000/api/v1/garages?user=${userId}`,
+                url: `https://garage-api-app.herokuapp.com/api/v1/garages?user=${userId}`,
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -31,7 +31,7 @@ const Garages = () => {
             for (const garageData of garageAPI.data.data) {
                 const config = {
                     method: 'get',
-                    url: `http://127.0.0.1:8000/api/v1/garages/vehicles?garage=${garageData.id}`,
+                    url: `https://garage-api-app.herokuapp.com/api/v1/garages/vehicles?garage=${garageData.id}`,
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -52,7 +52,7 @@ const Garages = () => {
     const handleRemoveGarage = (garageId) => {
         const config = {
             method: 'delete',
-            url: `http://127.0.0.1:8000/api/v1/garages/delete/${garageId}`,
+            url: `https://garage-api-app.herokuapp.com/api/v1/garages/delete/${garageId}`,
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -79,7 +79,7 @@ const Garages = () => {
             }
             const config = {
                 method: 'post',
-                url: 'http://127.0.0.1:8000/api/v1/garages/register',
+                url: 'https://garage-api-app.herokuapp.com/api/v1/garages/register',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
@@ -117,7 +117,7 @@ const Garages = () => {
             }
             const config = {
                 method: 'post',
-                url: 'http://127.0.0.1:8000/api/v1/garages/vehicle/register',
+                url: 'https://garage-api-app.herokuapp.com/api/v1/garages/vehicle/register',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
